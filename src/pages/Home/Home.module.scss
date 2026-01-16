@@ -1,0 +1,59 @@
+// Tools
+@use "../../styles/utils/vars" as v;
+@use "../../styles/utils/mixins" as m;
+
+// body {
+//     background-color: black;
+// }
+
+.container {
+    border: 2px solid rebeccapurple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    height: 100vh;
+    max-width: 1600px;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(23, 46, 160);
+    width: 100%;
+    height: 100%;
+}
+
+.eclipse {
+    border: 2px solid white;
+    background-color: black;
+    aspect-ratio: 1 / 1;
+    width: min(80%, 900px);
+    height: auto;
+
+    // image
+    border-radius: 50%;
+    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.765)) blur(4px);
+    animation: flickering 5s infinite;
+}
+
+@keyframes flickering {
+    0%  { opacity: 0.5; }
+    10% { opacity: 0.4; }
+    15% { opacity: 0.2; }
+    20% { opacity: 0.3; }
+    27% { opacity: 1; }
+    32% { opacity: 0.5; }
+    40% { opacity: 0.6; }
+    50% { opacity: 0.3; }
+    53% { opacity: 0.2; }
+    58% { opacity: 0.1; }
+    65% { opacity: 0.5; }
+    70% { opacity: 0.2; }
+    76% { opacity: 0.5; }
+    82% { opacity: 0.4; }
+    89% { opacity: 0.5; }
+    94% { opacity: 0.6; }
+    100%{ opacity: 0.5; }
+}

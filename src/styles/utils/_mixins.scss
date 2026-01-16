@@ -1,0 +1,45 @@
+@use "./vars" as v;
+
+@mixin flex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin card {
+  background-color: v.$clr-bg;
+  border-radius: v.$rd_8;
+  box-shadow: v.$shw-soft;
+  padding: v.$sp_10;
+}
+
+@mixin heading($size) {
+  // font-family: $ft-heading;
+  font-size: $size;
+  letter-spacing: v.$sp_01;
+}
+
+// ------------------------------------------------------
+// Interactive
+// ------------------------------------------------------
+
+@mixin clickable {
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease,
+    box-shadow 150ms ease,
+    transform 80ms ease;
+
+  &:hover {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.35);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+}

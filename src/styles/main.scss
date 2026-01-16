@@ -1,0 +1,11 @@
+// Tools
+@use "./utils/vars" as v;
+@use "./utils/mixins" as m;
+
+// Base
+ @use "./base/reset.scss";
+
+
+body { 
+    background-color: black;
+}
