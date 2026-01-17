@@ -32,6 +32,28 @@ function Home() {
                         />
                     </svg>
 
+                    {/* White */}
+                    <svg className={`
+                        ${styles.layer} ${styles.layerWhite}
+                        `} viewBox="0 0 800 800">
+                        <defs>
+                            <filter id="eclipseShadowWhite">
+                                <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" result="noise" />
+                                <feDisplacementMap in="SourceGraphic" in2="noise" scale="14" />
+                                {/* <feGaussianBlur stdDeviation="8" /> */}
+                            </filter>
+                        </defs>
+                        <circle
+                            cx="400"
+                            cy="400"
+                            r="200"
+                            fill="black"
+                            stroke="white"
+                            strokeWidth="2"
+                            filter="url(#eclipseShadowWhite)"
+                        />
+                    </svg>
+
                     {/* RED */}
                     <svg className={`
                         ${styles.layer} ${styles.layerRed}
@@ -48,8 +70,8 @@ function Home() {
                             cy="400"
                             r="200"
                             fill="black"
-                            stroke="black"
-                            strokeWidth="2"
+                            stroke="red"
+                            strokeWidth="4"
                             filter="url(#eclipseShadowRed)"
                         />
                     </svg>
@@ -70,8 +92,8 @@ function Home() {
                             cy="400"
                             r="200"
                             fill="black"
-                            stroke="black"
-                            strokeWidth="2"
+                            stroke="cyan"
+                            strokeWidth="4"
                             filter="url(#eclipseShadowBlue)"
                         />
                     </svg>
