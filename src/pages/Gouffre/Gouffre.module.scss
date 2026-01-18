@@ -1,0 +1,110 @@
+@use "../../styles/utils/vars" as v;
+@use "../../styles/utils/mixins" as m;
+
+@media (prefers-reduced-motion: reduce) {
+  .bgVideo {
+    display: none;
+  }
+}
+
+
+
+.container {
+  position: relative;
+  min-height: 100vh;
+  opacity: 0;
+  animation: fadeIn 5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* background */
+.bgVideo {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* corner cards */
+.cards {
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hobby,
+.fact,
+.skill,
+.home {
+  position: fixed;
+  pointer-events: auto;
+  width: clamp(220px, 28vw, 420px);
+  padding: 14px 16px;
+  background: transparent;
+  color: white;
+  font-size: clamp(12px, 20vw, 30px);
+  text-align: center;
+  font-family: "Audiowide", sans-serif;
+  cursor: pointer;
+  @include m.clickable;
+  border: none;
+}
+
+.hobby { top: 20px; left: 20px; }
+.fact  { top: 20px; right: 20px; }
+.skill { bottom: 20px; left: 20px; }
+.home  { bottom: 20px; right: 20px; }
+
+.hobby p,
+.fact p,
+.skill p,
+.home p {
+  margin: 0;
+}
+
+/* center content */
+.block {
+  position: fixed;
+  inset: 0;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  pointer-events: auto;
+}
+
+.tiles {
+  width: min(500px, 50vw);
+  min-height: auto;
+  padding: 22px 22px 16px;
+  background: transparent;
+  border: none;
+  color: white;
+  text-align: center;
+}
+
+.tiles h2 {
+  margin: 0 0 10px;
+  font-size: clamp(16px, 3.2vw, 24px);
+}
+
+.tiles p {
+  margin: 0 0 14px;
+}
+
+.blockClose {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+}

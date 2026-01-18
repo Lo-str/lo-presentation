@@ -27,15 +27,9 @@
 @mixin clickable {
   cursor: pointer;
   user-select: none;
-  transition:
-    background-color 150ms ease,
-    color 150ms ease,
-    box-shadow 150ms ease,
-    transform 80ms ease;
 
   &:hover {
-    transform: translateY(-0.1rem);
-    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.35);
+    transform: scale(1.2);
   }
 
   &:active {

@@ -5,6 +5,9 @@
 // Base
  @use "./base/reset.scss";
 
+ :root {
+  font-family: "Roboto Mono", monospace;
+}
 
 body { 
     background-color: black;

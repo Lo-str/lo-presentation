@@ -1,10 +1,5 @@
-// Tools
 @use "../../styles/utils/vars" as v;
 @use "../../styles/utils/mixins" as m;
-
-// body {
-//     background-color: black;
-// }
 
 .container {
   height: 100vh;
@@ -25,152 +20,147 @@
   width: min(100%, 900px);
   height: auto;
   aspect-ratio: 1 / 1;
-  background: black;
   overflow: visible;
 }
 
-.layer {
-  position: absolute;
+.eclipseStack::after {
+  content: "";
+  position: fixed;
   inset: 0;
-  width: 100%;
-  height: 100%;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    // pointer-events: none;
 }
 
 .layerOG {
-    position:relative;
-    opacity: 1;
-    animation: flickering 20s infinite;
-    filter: drop-shadow(0 0 25px rgba(248, 246, 246, 0.785));
     z-index: 2;
+    opacity: 1;
+    animation: flickering 10s infinite;
+    filter: drop-shadow(0 0 30px rgba(248, 246, 246, 0.785));
+    pointer-events: auto;
 }
 
 .layerRed,
-.layerBlue {
-  position: absolute;
-  mix-blend-mode: screen;
-  animation: uiGlitch 20s steps(1, end) infinite;
-  z-index: 1;
-}
-
+.layerBlue,
 .layerWhite {
-  opacity: 0;
-  filter: drop-shadow(0 0 30px rgba(248, 246, 246, 0.785));
-  animation: glitchWhite 20s infinite;
-  z-index: 1;
+    animation: none;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 3;
+
 }
 
 .layerRed {
-  transform: translate(0, 0);
-  opacity: 0;
+  mix-blend-mode: screen;
   filter: drop-shadow(0 0 30px rgba(255, 60, 60, 0.463));
 }
 
 .layerBlue {
-  transform: translate(0, 5px);
-  opacity: 0;
-  animation-delay: .1s;
+  mix-blend-mode: screen;
   filter: drop-shadow(0 0 30px rgba(0, 255, 255, 0.361));
 }
 
+.layerWhite {
+  filter: drop-shadow(0 0 30px rgba(248, 246, 246, 0.785));
+}
+
+.isClicked .layerOG {
+  animation-name: flickering, slideOut;
+  animation-duration: 10s, 7s;
+  animation-iteration-count: infinite, 1;
+  animation-delay: 0s, 4s;
+  animation-timing-function: linear, linear;
+  animation-fill-mode: none, forwards;
+}
+
+.isClicked .layerRed,
+.isClicked .layerBlue {
+  animation-name: uiGlitch;
+  animation-duration: 10s;
+  animation-timing-function: steps(1, end);
+  animation-iteration-count: 1;
+  animation-fill-mode: none;
+}
+
+.isClicked .layerWhite {
+  animation-name: glitchWhite;
+  animation-duration: 10s;
+  animation-iteration-count: 1;
+  animation-fill-mode: none;
+  animation-timing-function: linear;
+}
+
+@keyframes slideOut {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 30px white);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.01);
+    filter: drop-shadow(0 0 1200px white);
+    opacity: 0;
+  }
+}
+
 @keyframes uiGlitch {
-    0%, 0.99%   { transform: translate(0,0); opacity: 0; }
+  0%, 0.99% { transform: translate(0,0); opacity: 0; }
 
-    /* burst 1 */
-    1%          { transform: translate(5px, 0); opacity: .6; }
-    1.2%        { transform: translate(0,0); opacity: 0; }
+  1%   { transform: translate(5px, 0); opacity: .6; }
+  1.2% { transform: translate(0,0); opacity: 0; }
 
-    /* hold */
-    1.2%, 52.99% { transform: translate(0,0); opacity: 0; }
+  53%  { transform: translate(-5px, -1px); opacity: .2; }
+  53.2%{ transform: translate(0,0); opacity: 0; }
 
-    /* burst 2 */
-    53%         { transform: translate(-5px, -1px); opacity: .2; }
-    53.2%       { transform: translate(0,0); opacity: 0; }
+  70%  { transform: translate(5px, -5px); opacity: .3; }
+  70.2%{ transform: translate(0,0); opacity: 0; }
 
-    /* hold */
-    53.2%, 69.99% { transform: translate(0,0); opacity: 0; }
+  94%  { transform: translate(-10px, 1px); opacity: .8; }
+  94.5%{ transform: translate(0,0); opacity: 0; }
 
-    /* burst 3 */
-    70%         { transform: translate(5px, -5px); opacity: .3; }
-    70.2%       { transform: translate(0,0); opacity: 0; }
+  96%  { transform: translate(0, 5px); opacity: .35; }
+  96.5%{ transform: translate(0,0); opacity: 0; }
 
-    /* hold */
-    70.2%, 93.99% { transform: translate(0,0); opacity: 0; }
-
-    /* burst 4 */
-    94%         { transform: translate(-10px, 1px); opacity: .8; }
-    94.5%       { transform: translate(0,0); opacity: 0; }
-
-    /* burst 5 */
-    96%         { transform: translate(0, 5px); opacity: .35; }
-    96.5%       { transform: translate(0,0); opacity: 0; }
-    100%        { transform: translate(0,0); opacity: 0; }
+  100% { transform: translate(0,0); opacity: 0; }
 }
 
 @keyframes glitchWhite {
-    0%, 19.9%       { transform: translate(0,0); opacity: 0; }
+  20%  { transform: translate(50px, 30px); opacity: .8; }
+  20.5%{ transform: translate(0,0); opacity: 0; }
 
-  /* burst 1 */
-    20%             { transform: translate(50px, 30px); opacity: .8; }
-    20.5%, 29.9%      { transform: translate(0,0); opacity: 0; }
+  30%  { transform: translate(0, -300px); opacity: .5; }
+  30.4%{ transform: translate(0,0); opacity: 0; }
 
-    30%           { transform: translate(0, -300px); opacity: .5; }
-    30.2%, 30.4%      { transform: translate(0,-300px); opacity: 0; }
+  40%  { transform: translate(100px, 300px); opacity: 1; }
+  40.4%{ transform: translate(0,0); opacity: 0; }
 
-    30.6%             { transform: translate(0, -300px); opacity: 1; }
-    30.8%, 40%      { transform: translate(0,-300px); opacity: 0; }
+  54%  { transform: translate(-100px, -30px); opacity: .5; }
+  54.4%{ transform: translate(0,0); opacity: 0; }
 
-    40.2%           { transform: translate(0, -300px); opacity: 1; }
-    40.4%, 40.6%      { transform: translate(0,-300px); opacity: 0; }
+  80%  { transform: translate(100px, -10px); opacity: .4; }
+  80.4%{ transform: translate(0,0); opacity: 0; }
 
-    40.8%           { transform: translate(100px, 300px); opacity: 1; }
-    50%, 50.2%      { transform: translate(0, 0); opacity: 0; }
-
-    50.4%           { transform: translate(100px, 300px); opacity: 1; }
-    50.6%, 50.8%      { transform: translate(0, 0); opacity: 0; }
-
-    51%           { transform: translate(100px, 300px); opacity: 0.5; }
-    51.2%, 53.2%      { transform: translate(100px ,300px); opacity: 1; }
-
-    53.4%             { transform: translate(0, -300px); opacity: 1; }
-    53.6%, 53.8%      { transform: translate(0,0); opacity: 0; }
-
-    // burst 2
-    53.9%           { transform: translate(-100px, -30px); opacity: .5; }
-    60%, 60.2%      { transform: translate(0,0); opacity: 0; }
-
-    // burst 3
-    78.9%           { transform: translate(200px, 70px); opacity: .9; }
-    79%, 79.1%      { transform: translate(0,0); opacity: 0; }
-
-     // burst 4
-    80%         { transform: translate(100px, -10px); opacity: .4; }
-    80.4%, 100% { transform: translate(0,0); opacity: 0; }
+  100% { transform: translate(0,0); opacity: 0; }
 }
 
 @keyframes flickering {
-    0%  { opacity: 0.6; }
-    5%  { opacity: 0.4; }
-    10% { opacity: 0.5; }
-    15% { opacity: 0.2; }
-    17% { opacity: 0.4; }
-    20% { opacity: 0.5; }
-    22% { opacity: 0.6; }
-    32% { opacity: 0.5; }
-    35% { opacity: 0.7; }
-    40% { opacity: 0.8; }
-    45% { opacity: 0.5; }
-    50% { opacity: 0.7; }
-    53% { opacity: 0.2; }
-    55% { opacity: 0.1; }
-    58% { opacity: 0.3; }
-    65% { opacity: 0.5; }
-    70% { opacity: 0.2; }
-    76% { opacity: 0.5; }
-    78% { opacity: 0.6; }
-    82% { opacity: 0.4; }
-    89% { opacity: 0.5; }
-    94% { opacity: 0.6; }
-    97% { opacity: 0.4; }
-    100%{ opacity: 0.5; }
+  0%  { opacity: 0.6; }
+  5%  { opacity: 0.4; }
+  10% { opacity: 0.5; }
+  15% { opacity: 0.2; }
+  20% { opacity: 0.5; }
+  35% { opacity: 0.7; }
+  50% { opacity: 0.7; }
+  70% { opacity: 0.2; }
+  100%{ opacity: 0.5; }
 }
-
