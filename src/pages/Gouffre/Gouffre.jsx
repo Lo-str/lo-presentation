@@ -47,21 +47,25 @@ function Gouffre() {
             {activeCard === "hobby" && (
               <>
                 <h2>Hobby</h2>
-                <p>Anything DIY. Making, fixing, modifying, learning by doing.</p>
+                <p>Anything DIY.
+                  <br />Making, fixing, modifying, learning by doing.</p>
               </>
             )}
 
             {activeCard === "fact" && (
               <>
                 <h2>Fun Fact</h2>
-                <p>I’m passionate by human augmentation, using technology as a way to extend everyday capability.</p>
+                <p>I’m passionate by human augmentation,
+                  <br />using technology as a way to extend
+                  <br />everyday capability.</p>
               </>
             )}
 
             {activeCard === "skill" && (
               <>
                 <h2>Skill</h2>
-                <p>Woodworking. Working with material, structure, and precision.</p>
+                <p>Woodworking.
+                  <br />Working with material, structure, and precision.</p>
               </>
             )}
 
