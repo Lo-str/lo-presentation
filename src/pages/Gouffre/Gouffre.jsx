@@ -9,6 +9,8 @@ function Gouffre() {
   const openCard = (key) => setActiveCard(key);
   const closeCard = () => setActiveCard(null);
 
+  const [showpic, setShowPic] = useState(false)
+
   return (
     <div className={styles.container}>
       <video
@@ -47,32 +49,44 @@ function Gouffre() {
             {activeCard === "hobby" && (
               <>
                 <h2>Hobby</h2>
-                <p>Anything DIY.
-                  <br />Making, fixing, modifying, learning by doing.</p>
+                <p>Anything DIY. Too many DIY...</p>
+                <img src={`${process.env.PUBLIC_URL}/media/moto.jpg`} alt="" />
+                <img src={`${process.env.PUBLIC_URL}/media/candle.jpg`} alt="" />
+                <img src={`${process.env.PUBLIC_URL}/media/pond.jpg`} alt="" />
               </>
             )}
 
             {activeCard === "fact" && (
               <>
                 <h2>Fun Fact</h2>
-                <p>I’m passionate by human augmentation,
-                  <br />using technology as a way to extend
-                  <br />everyday capability.</p>
+                <p>I built my van and I aspire to become a cyborg.</p>
+                  <img src={`${process.env.PUBLIC_URL}/media/van-window.jpg`}alt="" />
+                  <img src={`${process.env.PUBLIC_URL}/media/van-vide.jpg`}alt="" />
+                  <img src={`${process.env.PUBLIC_URL}/media/van-semi.jpg`}alt="" />
               </>
             )}
 
             {activeCard === "skill" && (
               <>
                 <h2>Skill</h2>
-                <p>Woodworking.
-                  <br />Working with material, structure, and precision.</p>
+                <p>Dog whisperer
+                  <br />Well I do whisper, whether they understand or not is another story.</p>
+                  <img src={`${process.env.PUBLIC_URL}/media/lilly.jpg`} alt="" />
+                  <img src={`${process.env.PUBLIC_URL}/media/dot.jpg`} alt="" />
+                  <img src={`${process.env.PUBLIC_URL}/media/kaolla.jpg`} alt="" />
+                  <img src={`${process.env.PUBLIC_URL}/media/decibel.jpg`} alt="" />
+                  <img src={`${process.env.PUBLIC_URL}/media/onis.jpg`} alt="" />
+                  
               </>
             )}
 
             {activeCard === "home" && (
               <>
                 <h2>Home</h2>
-                <p>Färentuna, Stockholm County.</p>
+                <p>I live in Färentuna, Stockholm County, with my partner and our two cats: Hamish aka "Michou", Kirke aka "Tits Maggie" and Ona or "Ounz banounz" if she likes you enough.</p>
+                <img src={`${process.env.PUBLIC_URL}/media/michou.jpg`} alt="" />
+                <img src={`${process.env.PUBLIC_URL}/media/idalo.jpg`} alt="" />
+                <img src={`${process.env.PUBLIC_URL}/media/kiks.jpg`} alt="" />
               </>
             )}
 
