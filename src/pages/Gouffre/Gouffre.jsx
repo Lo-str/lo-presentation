@@ -55,16 +55,16 @@ function Gouffre() {
                 </div>
 
                 <div className={styles.item1}>
-                  <img src={`${import.meta.env.BASE_URL}/media/moto.png`} alt="" />
+                  <img src={`${import.meta.env.BASE_URL}public/media/moto.png`} alt="" />
                 </div>
                 <div className={styles.item2}>
-                  <img src={`${import.meta.env.BASE_URL}/media/candle.png`} alt="" />
+                  <img src={`${import.meta.env.BASE_URL}public/media/candle.png`} alt="" />
                 </div>
                 <div className={styles.item3}>
-                  <img src={`${import.meta.env.BASE_URL}/media/pond.png`} alt="" />
+                  <img src={`${import.meta.env.BASE_URL}public/media/pond.png`} alt="" />
                 </div>
                 <div className={styles.item15}>
-                  <img src={`${import.meta.env.BASE_URL}/media/painting.png`} alt="" />
+                  <img src={`${import.meta.env.BASE_URL}public/media/painting.png`} alt="" />
                 </div>
               </div>
             )}
@@ -80,16 +80,16 @@ function Gouffre() {
                 </div>
 
                 <div className={styles.item4}>
-                  <img src={`${import.meta.env.BASE_URL}/media/van-window.png`} alt="" />
+                  <img src={`${import.meta.env.BASE_URL}public/media/van-window.png`} alt="" />
                 </div>
                 <div className={styles.item5}>
-                  <img src={`${import.meta.env.BASE_URL}/media/van-vide.png`} alt="" />
+                  <img src={`${import.meta.env.BASE_URL}public/media/van-vide.png`} alt="" />
                 </div>
                 <div className={styles.item6}>
-                  <img src={`${import.meta.env.BASE_URL}/media/van-semi.png`} alt="" />
+                  <img src={`${import.meta.env.BASE_URL}public/media/van-semi.png`} alt="" />
                 </div>
                 <div className={styles.item16}>
-                  <img src={`${import.meta.env.BASE_URL}/media/cyborg.png`} alt="" />
+                  <img src={`${import.meta.env.BASE_URL}public/media/cyborg.png`} alt="" />
                 </div>
               </div>
             )}
@@ -109,16 +109,16 @@ function Gouffre() {
                 </div>
 
                 <div className={styles.item7}>
-                  <img src={`${import.meta.env.BASE_URL}/media/lilly.png`} alt="" />
+                  <img src={`${import.meta.env.BASE_URL}public/media/lilly.png`} alt="" />
                 </div>
                 <div className={styles.item8}>
-                  <img src={`${import.meta.env.BASE_URL}/media/dot.png`} alt="" />
+                  <img src={`${import.meta.env.BASE_URL}public/media/dot.png`} alt="" />
                 </div>
                 <div className={styles.item9}>
-                  <img src={`${import.meta.env.BASE_URL}/media/kaolla.png`} alt="" />
+                  <img src={`${import.meta.env.BASE_URL}public/media/kaolla.png`} alt="" />
                 </div>
                 <div className={styles.item10}>
-                  <img src={`${import.meta.env.BASE_URL}/media/decibel.png`} alt="" />
+                  <img src={`${import.meta.env.BASE_URL}public/media/decibel.png`} alt="" />
                 </div>
               </div>
             )}
@@ -138,16 +138,16 @@ function Gouffre() {
                 </div>
 
                 <div className={styles.item11}>
-                  <img src={`${import.meta.env.BASE_URL}/media/onis.png`} alt="" />
+                  <img src={`${import.meta.env.BASE_URL}public/media/onis.png`} alt="" />
                 </div>
                 <div className={styles.item12}>
-                  <img src={`${import.meta.env.BASE_URL}/media/michou.png`} alt="" />
+                  <img src={`${import.meta.env.BASE_URL}public/media/michou.png`} alt="" />
                 </div>
                 <div className={styles.item13}>
-                  <img src={`${import.meta.env.BASE_URL}/media/idalo.png`} alt="" />
+                  <img src={`${import.meta.env.BASE_URL}public/media/idalo.png`} alt="" />
                 </div>
                 <div className={styles.item14}>
-                  <img src={`${import.meta.env.BASE_URL}/media/kiks.png`} alt="" />
+                  <img src={`${import.meta.env.BASE_URL}public/media/kiks.png`} alt="" />
                 </div>
               </div>
             )}
