@@ -9,8 +9,6 @@ function Gouffre() {
   const openCard = (key) => setActiveCard(key);
   const closeCard = () => setActiveCard(null);
 
-  const [showpic, setShowPic] = useState(false)
-
   return (
     <div className={styles.container}>
       <video
@@ -47,52 +45,112 @@ function Gouffre() {
         <div className={styles.block} onClick={closeCard}>
           <div className={styles.tiles} onClick={(e) => e.stopPropagation()}>
             {activeCard === "hobby" && (
-              <>
-                <h2>Hobby</h2>
-                <p>Anything DIY. Too many DIY...</p>
-                <img src={`${process.env.PUBLIC_URL}/media/moto.jpg`} alt="" />
-                <img src={`${process.env.PUBLIC_URL}/media/candle.jpg`} alt="" />
-                <img src={`${process.env.PUBLIC_URL}/media/pond.jpg`} alt="" />
-              </>
+              <div className={styles.hobbyImg}>
+                <div className={styles.text}>
+                  <h2>Hobby</h2>
+                  <p>Anything DIY. Too many DIY...</p>
+                  <button type="button" className={styles.blockClose} onClick={closeCard}>
+                    Close
+                  </button>
+                </div>
+
+                <div className={styles.item1}>
+                  <img src={`${import.meta.env.BASE_URL}/media/moto.png`} alt="" />
+                </div>
+                <div className={styles.item2}>
+                  <img src={`${import.meta.env.BASE_URL}/media/candle.png`} alt="" />
+                </div>
+                <div className={styles.item3}>
+                  <img src={`${import.meta.env.BASE_URL}/media/pond.png`} alt="" />
+                </div>
+                <div className={styles.item15}>
+                  <img src={`${import.meta.env.BASE_URL}/media/painting.png`} alt="" />
+                </div>
+              </div>
             )}
 
             {activeCard === "fact" && (
-              <>
-                <h2>Fun Fact</h2>
-                <p>I built my van and I aspire to become a cyborg.</p>
-                  <img src={`${process.env.PUBLIC_URL}/media/van-window.jpg`}alt="" />
-                  <img src={`${process.env.PUBLIC_URL}/media/van-vide.jpg`}alt="" />
-                  <img src={`${process.env.PUBLIC_URL}/media/van-semi.jpg`}alt="" />
-              </>
+              <div className={styles.factImg}>
+                <div className={styles.text}>
+                  <h2>Fun Fact</h2>
+                  <p>I built my van and I aspire to become a cyborg.</p>
+                  <button type="button" className={styles.blockClose} onClick={closeCard}>
+                    Close
+                  </button>
+                </div>
+
+                <div className={styles.item4}>
+                  <img src={`${import.meta.env.BASE_URL}/media/van-window.png`} alt="" />
+                </div>
+                <div className={styles.item5}>
+                  <img src={`${import.meta.env.BASE_URL}/media/van-vide.png`} alt="" />
+                </div>
+                <div className={styles.item6}>
+                  <img src={`${import.meta.env.BASE_URL}/media/van-semi.png`} alt="" />
+                </div>
+                <div className={styles.item16}>
+                  <img src={`${import.meta.env.BASE_URL}/media/cyborg.png`} alt="" />
+                </div>
+              </div>
             )}
 
             {activeCard === "skill" && (
-              <>
-                <h2>Skill</h2>
-                <p>Dog whisperer
-                  <br />Well I do whisper, whether they understand or not is another story.</p>
-                  <img src={`${process.env.PUBLIC_URL}/media/lilly.jpg`} alt="" />
-                  <img src={`${process.env.PUBLIC_URL}/media/dot.jpg`} alt="" />
-                  <img src={`${process.env.PUBLIC_URL}/media/kaolla.jpg`} alt="" />
-                  <img src={`${process.env.PUBLIC_URL}/media/decibel.jpg`} alt="" />
-                  <img src={`${process.env.PUBLIC_URL}/media/onis.jpg`} alt="" />
-                  
-              </>
+              <div className={styles.skillImg}>
+                <div className={styles.text}>
+                  <h2>Skill</h2>
+                  <p>
+                    Dog whisperer
+                    <br />
+                    Well I do whisper, whether they understand or not is another story.
+                  </p>
+                  <button type="button" className={styles.blockClose} onClick={closeCard}>
+                    Close
+                  </button>
+                </div>
+
+                <div className={styles.item7}>
+                  <img src={`${import.meta.env.BASE_URL}/media/lilly.png`} alt="" />
+                </div>
+                <div className={styles.item8}>
+                  <img src={`${import.meta.env.BASE_URL}/media/dot.png`} alt="" />
+                </div>
+                <div className={styles.item9}>
+                  <img src={`${import.meta.env.BASE_URL}/media/kaolla.png`} alt="" />
+                </div>
+                <div className={styles.item10}>
+                  <img src={`${import.meta.env.BASE_URL}/media/decibel.png`} alt="" />
+                </div>
+              </div>
             )}
 
             {activeCard === "home" && (
-              <>
-                <h2>Home</h2>
-                <p>I live in Färentuna, Stockholm County, with my partner and our two cats: Hamish aka "Michou", Kirke aka "Tits Maggie" and Ona or "Ounz banounz" if she likes you enough.</p>
-                <img src={`${process.env.PUBLIC_URL}/media/michou.jpg`} alt="" />
-                <img src={`${process.env.PUBLIC_URL}/media/idalo.jpg`} alt="" />
-                <img src={`${process.env.PUBLIC_URL}/media/kiks.jpg`} alt="" />
-              </>
-            )}
+              <div className={styles.homeImg}>
+                <div className={styles.text}>
+                  <h2>Home</h2>
+                  <p>
+                    I live in Färentuna, Stockholm County, with my partner and our two cats and dog:
+                    Hamish aka "Michou", Kirke aka "Tits Maggie" and Ona or "Ounz banounz" if she likes
+                    you enough.
+                  </p>
+                  <button type="button" className={styles.blockClose} onClick={closeCard}>
+                    Close
+                  </button>
+                </div>
 
-            <button type="button" className={styles.blockClose} onClick={closeCard}>
-              Close
-            </button>
+                <div className={styles.item11}>
+                  <img src={`${import.meta.env.BASE_URL}/media/onis.png`} alt="" />
+                </div>
+                <div className={styles.item12}>
+                  <img src={`${import.meta.env.BASE_URL}/media/michou.png`} alt="" />
+                </div>
+                <div className={styles.item13}>
+                  <img src={`${import.meta.env.BASE_URL}/media/idalo.png`} alt="" />
+                </div>
+                <div className={styles.item14}>
+                  <img src={`${import.meta.env.BASE_URL}/media/kiks.png`} alt="" />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       )}

@@ -12,15 +12,13 @@
   height: 100vh;
   background-color: black;
   min-width: 600px;
-  // overflow-y: scroll;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0;}
-    to {opacity: 1;}
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* background */
 .bgVideo {
   position: fixed;
   inset: 0;
@@ -33,7 +31,6 @@
   animation: fadeIn 5s ease-out forwards;
 }
 
-/* corner cards */
 .cards {
   position: fixed;
   inset: 0;
@@ -60,9 +57,9 @@
 }
 
 .hobby { top: 20px; left: 20px; }
-.fact  { top: 20px; right: 20px; }
+.fact { top: 20px; right: 20px; }
 .skill { bottom: 20px; left: 20px; }
-.home  { bottom: 20px; right: 20px; }
+.home { bottom: 20px; right: 20px; }
 
 .hobby p,
 .fact p,
@@ -71,7 +68,6 @@
   margin: 0;
 }
 
-/* center content */
 .block {
   position: fixed;
   inset: 0;
@@ -82,13 +78,18 @@
 }
 
 .tiles {
-  width: min(500px, 50vw);
-  min-height: auto;
+  width: 90%;
+  height: 90vh;
   padding: 22px 22px 16px;
   background: transparent;
   border: none;
   color: white;
   text-align: center;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 16px;
+  // overflow: hidden;
+  position: relative;
 }
 
 .tiles h2 {
@@ -108,4 +109,162 @@
   padding: 10px 14px;
   border-radius: 12px;
   cursor: pointer;
+  justify-self: center;
+}
+
+.hobbyImg,
+.skillImg,
+.factImg,
+.homeImg {
+  // outline: 2px solid yellowgreen;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas:
+    "a a . b b"
+    "a a . b b"
+    ". . t . ."
+    "c c . d d"
+    "c c . d d";
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  gap: 12px;
+  opacity: 0.9;
+  // overflow: hidden;
+  min-width: 0;
+  min-height: 0;
+}
+
+.hobbyImg > div,
+.skillImg > div,
+.factImg > div,
+.homeImg > div {
+  overflow: visible;
+  min-width: 0;
+  min-height: 0;
+}
+
+.hobbyImg img,
+.skillImg img,
+.factImg img,
+.homeImg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  animation: float 7s ease-in-out infinite;
+  // transform: scale(1);
+
+}
+
+.item1 img,
+.item4 img,
+.item7 img,
+.item11 img { animation-delay: 0s; }
+
+.item2 img,
+.item5 img,
+.item8 img,
+.item12 img { animation-delay: 1.2s; }
+
+.item3 img,
+.item6 img,
+.item9 img,
+.item13 img { animation-delay: 2.4s; }
+
+.item10 img,
+.item14 img { animation-delay: 3.6s; }
+
+
+.item1,
+.item2,
+.item3,
+.item4,
+.item5,
+.item6,
+.item7,
+.item8,
+.item9,
+.item10,
+.item11,
+.item12,
+.item13,
+.item14,
+.item15,
+.item16 {
+  opacity: 0;
+  animation: slideIn 2s ease-out forwards;
+}
+
+.item1,
+.item4,
+.item7,
+.item11 {
+  animation-delay: 1s;
+}
+
+.item2,
+.item5,
+.item8, 
+.item12 {
+  animation-delay: 5s;
+
+}
+
+.item3,
+.item6,
+.item9,
+.item13 {
+  animation-delay: 2.6s;
+
+}
+
+.item10,
+.item14,
+.item15,
+.item16 {
+  animation-delay: 6s;
+
+}
+
+.item1 { grid-area: a; }
+.item2 { grid-area: b; }
+.item3 { grid-area: c; }
+.item4 { grid-area: a; }
+.item5 { grid-area: b; }
+.item6 { grid-area: c; }
+.item7 { grid-area: a; }
+.item8 { grid-area: b; }
+.item9 { grid-area: c; }
+.item10 { grid-area: d; }
+.item11 { grid-area: a; }
+.item12 { grid-area: b; }
+.item13 { grid-area: c; }
+.item14 { grid-area: d; }
+.item15 { grid-area: d; }
+.item16 { grid-area: d; }
+
+.text {
+  grid-area: t;
+  align-self: center;
+  justify-self: center;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+
+@keyframes float {
+  0%   { transform: translateY(0) scale(1.2); }
+  50%  { transform: translateY(-20px) scale(1.2); }
+  100% { transform: translateY(0) scale(1.2); }
+}
+
+@keyframes slideIn {
+  from {opacity: 0;}
+  to {opacity: 1}
 }
